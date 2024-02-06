@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import Home from './views/Home.vue';
 </script>
 
 <template>
@@ -11,7 +12,8 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Poop + Pee" />
+  <HelloWorld msg="Yessir" />
+  <Home />
 </template>
 
 <style scoped>
