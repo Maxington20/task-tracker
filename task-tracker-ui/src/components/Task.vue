@@ -34,9 +34,10 @@ export default {
 .task-card {
     color: #35495e;
     border: 1px solid #ccc;
+    border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
-    background-color: #f4f4f4;
+    background-color: #cfd3ed;
 }
 </style>

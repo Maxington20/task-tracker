@@ -1,10 +1,12 @@
 <template>
-  <div class="task-board">
-    <h2>Not Started</h2>
-    <h2>In Progress</h2>
-    <h2>Completed</h2>    
-    <Task v-for="task in tasks" :key="task.title" :task="task" />
-  </div>
+  <div class="task-board-header">
+        <h2>Not Started</h2>
+        <h2>In Progress</h2>
+        <h2>Completed</h2>
+    </div>
+    <div class="task-board">    
+        <Task v-for="task in tasks" :key="task.title" :task="task" />
+    </div>
 </template>
 
 <script setup lang="ts">
@@ -33,13 +35,20 @@
 </script>
 
 <style scoped>
+
+.task-board-header {
+    color: #35495e;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 .task-board {
     color: #35495e;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: space-between;
-    margin: 1rem;
-
 }
 </style>
