@@ -1,6 +1,7 @@
 <template>
   <div class="task-card">
     <h2>{{ task.title }}</h2>
+    <p>Status: {{ task.status }}</p>
     <p>{{ task.description }}</p>
     <p>Due Date: {{ task.dueDate }}</p>
     <button @click="completeTask">Complete</button>
