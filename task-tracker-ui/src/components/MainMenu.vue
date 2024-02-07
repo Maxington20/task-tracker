@@ -3,7 +3,8 @@
       <h1 class="logo">Task Tracker</h1>
       <nav class="navbar">
         <router-link to="/" exact-active-class="active-link">Home</router-link>
-        <router-link to="/about" exact-active-class="active-link">About</router-link>
+        <router-link to="/tasks" exact-active-class="active-link">Tasks</router-link>
+        <router-link to="/about" exact-active-class="active-link">About</router-link>        
       </nav>
     </header>
   </template>
