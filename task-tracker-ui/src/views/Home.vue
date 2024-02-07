@@ -11,7 +11,7 @@
   
   <style scoped>
   .home {
-    text-align: left;
+    text-align: center;
     margin-top: 3em;
     margin-left: 1em;
     color: #35495e; /* Dark blue text color */

@@ -11,12 +11,12 @@ const routes = [
     path: "/about",
     name: "About",
     component: () => import("../views/About.vue"),
-  }
-  // {
-  //   path: "/tasks",
-  //   name: "Tasks",
-  //   component: () => import("../views/Tasks.vue"),
-  // },
+  },
+  {
+    path: "/tasks",
+    name: "Tasks",
+    component: () => import("../views/TaskBoard.vue"),
+  },
   // {
   //   path: "/tasks/:id",
   //   name: "Task",
