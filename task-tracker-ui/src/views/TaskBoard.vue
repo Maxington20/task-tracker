@@ -1,5 +1,8 @@
 <template>
+  <div>
+    <button @click="showModal" class="add-task-button">Add Task</button>  
     <div class="task-board">
+      <NewTask :isVisible="isModalVisible" :task="newTask" @update:isVisible="updateVisibility" />
       <div class="task-board-column">
         <div class="task-board-header">
           <h2>Not Started</h2>
@@ -25,56 +28,35 @@
         </div>
       </div>
     </div>
+  </div>
   </template>
   
   <script setup lang="ts">
   import { ref, computed } from 'vue';
-  import { Task as TaskModel } from '../models/Task.ts';
   import Task from '../components/Task.vue';
+  import {mockTasks} from '../mockData/mockTasks.ts';
+  import NewTask from '../components/NewTask.vue';
   
-  const tasks = ref<TaskModel[]>([
-    {
-      title: 'Task 1',
-      description: 'This is the first task',
-      dueDate: '2022-12-31',
-      status: 'notStarted'
-    },
-    {
-      title: 'Task 2',
-      description: 'This is the second task',
-      dueDate: '2022-12-31',
-      status: 'inProgress'
-    },
-    {
-      title: 'Task 3',
-      description: 'This is the third task',
-      dueDate: '2022-12-31',
-      status: 'completed'
-    },
-    {
-        title: 'Task 4',
-        description: 'This is the fourth task',
-        dueDate: '2022-12-31',
-        status: 'notStarted'
-    },
-    {
-        title: 'Task 5',
-        description: 'This is the fifth task',
-        dueDate: '2022-12-31',
-        status: 'inProgress'
-    },
-    {
-        title: 'Task 6',
-        description: 'This is the sixth task',
-        dueDate: '2022-12-31',
-        status: 'inProgress'
-    }
-  ]);
-  
+  const tasks = ref<Task[]>(mockTasks);
   const notStartedTasks = computed(() => tasks.value.filter(task => task.status === 'notStarted'));
   const inProgressTasks = computed(() => tasks.value.filter(task => task.status === 'inProgress'));
   const completedTasks = computed(() => tasks.value.filter(task => task.status === 'completed'));
   
+  const isModalVisible = ref(false);
+  const newTask = ref<Task>({
+    id: 1,
+    name: '',
+    status: 'notStarted'
+  })
+
+  const showModal = () => {
+    isModalVisible.value = true;
+  }
+
+  const updateVisibility = (value: boolean) => {
+    isModalVisible.value = value;
+  }
+
   </script>
   
   <style scoped>
@@ -97,10 +79,13 @@
     min-height: 100px; /* Set a min height for better visual */
     border: 1px solid #ccc; /* Add a border for better visual */
     padding: 1rem;
+    width: 75%;
+    margin-right: auto;
+    margin-left: auto;
   }
   
   .task-list .task-item {
-    cursor: pointer;
+    cursor: pointer; /* Change cursor to pointer for better visual */
   }
   
   .task-list .task-item:hover {
