@@ -40,5 +40,8 @@ export default {
     margin-bottom: 1rem;
     margin-top: 1rem;
     background-color: #cfd3ed;
+    width: 50%;
+    margin-right: auto;
+    margin-left: auto;
 }
 </style>

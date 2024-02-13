@@ -26,4 +26,8 @@ class Task {
     markAsCompleted(): void {
         this.completed = true;
     }
+
+    getStatus(): string {
+        return this.status;
+    }   
 }
